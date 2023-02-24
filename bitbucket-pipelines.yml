@@ -1,0 +1,9 @@
+image: node:18.13.0
+pipelines:
+  branches:
+    master:
+      - step:
+          deployment: production
+          script:
+            - npm i
+            - npm run test

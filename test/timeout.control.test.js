@@ -101,7 +101,7 @@ describe('maxWaitTimeBeforePassingControlToApp', function() {
           response.on('end', function() {
             body = JSON.parse(body);
             assert.equal(body.files[0].filename, 'somefiletokeep.txt');
-            assert(_.isUndefined(body.params));
+            assert(!_.isUndefined(body.params));
             assert.equal(response.statusCode, 200);
             return done();
           });

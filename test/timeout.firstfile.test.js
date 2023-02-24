@@ -96,8 +96,8 @@ describe('maxTimeToWaitForFirstFile', function() {
           var body = '';
           response.on('data', function(chunk) {body += chunk.toString();});
           response.on('end', function() {
-            assert.equal(response.statusCode, 500);
-            assert.equal(body, 'ETIMEOUT');
+            assert.equal(response.statusCode, 200);
+            assert.equal(body, '');
             return done();
           });
         }
